@@ -11,7 +11,7 @@ long double sum(const long double&, const long double&);
 long double sub(const long double&, const long double&);
 long double mult(const long double&, const long double&);
 
-enum operation { Sum, Sub, Mult, Division, Mod, Exp = 100, Empty = 1000 };
+enum operation { Sum, Sub, Mult, Division, Mod, Exp = 100, Empty = 1000, unplus = 101, unminus = 102 };
 
 bool isUnary(operation&);
 void askForNumber(long long&);
@@ -110,7 +110,7 @@ long long mod(const long long& a, const long long& b) {
 }
 
 operation askForOperation() {
-    std::string menu = "Sum - 0\nSub - 1\nMult - 2\nDivision - 3\nMod - 4\n";
+    std::string menu = "Sum - 0\nSub - 1\nMult - 2\nDivision - 3\nMod - 4\nplus one - 101\nminus one - 102\n";
     std::cout << menu;
     std::cout << "operation? ";
     int num;
@@ -145,6 +145,14 @@ void askForNumber(long double& a, long double& b) {
 
 void applyUnaryOperation(const operation& op, const long long& a, long long& b) {
     switch (op) {
+        case unplus: {
+            b = a + 1;
+            break;
+        }
+        case unminus: {
+            b = a - 1;
+            break;
+        }
         case Empty: {
             break;
         }

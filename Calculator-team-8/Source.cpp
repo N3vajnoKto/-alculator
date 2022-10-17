@@ -17,6 +17,7 @@ long double sub(const long double&, const long double&);
 long double mult(const long double&, const long double&);
 long double division(const long double&, const long double&);
 
+<<<<<<< HEAD
 enum operation {
     Sum,
     Sub,
@@ -34,6 +35,9 @@ enum operation {
     Negation,
     Empty = 1000
 };
+=======
+enum operation { Sum, Sub, Mult, Division, Mod, Exp = 100, Empty = 1000, unplus = 101, unminus = 102 };
+>>>>>>> a1042f45e44df06e9b72d9df29fb436735ef6543
 
 bool isUnary(operation&);
 void askForNumber(int&);
@@ -132,6 +136,7 @@ int mod(const int& a, const int& b) {
     return a % b;
 }
 
+<<<<<<< HEAD
 int negation(const int& a) {
     if (a == 0) {
         return 1;
@@ -169,6 +174,10 @@ operation askForOperation(std::string type) {
     } else if (type == "double") {
         menu = "Sum - 0\nSub - 1\nMult - 2\nDivision - 3";
     }
+=======
+operation askForOperation() {
+    std::string menu = "Sum - 0\nSub - 1\nMult - 2\nDivision - 3\nMod - 4\nplus one - 101\nminus one - 102\n";
+>>>>>>> a1042f45e44df06e9b72d9df29fb436735ef6543
     std::cout << menu;
     std::cout << "operation? ";
     int num;
@@ -202,6 +211,7 @@ void askForNumber(long double& a, long double& b) {
 
 void applyUnaryOperation(const operation& op, const int& a, int& b) {
     switch (op) {
+<<<<<<< HEAD
         case UnPlus: {
             b = a + 1;
             break;
@@ -214,6 +224,16 @@ void applyUnaryOperation(const operation& op, const int& a, int& b) {
             b = negation(a);
             break;
         }
+=======
+        case unplus: {
+            b = a + 1;
+            break;
+        }
+        case unminus: {
+            b = a - 1;
+            break;
+        }
+>>>>>>> a1042f45e44df06e9b72d9df29fb436735ef6543
         case Empty: {
             break;
         }

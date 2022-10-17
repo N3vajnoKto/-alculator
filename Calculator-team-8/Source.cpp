@@ -1,60 +1,81 @@
 #include <iostream>
 
-long long sum(const long long&, const long long&);
-long long sub(const long long&, const long long&);
-long long mult(const long long&, const long long&);
-long long division(const long long&, const long long&);
-long long mod(const long long&, const long long&);
+int sum(const int&, const int&);
+int sub(const int&, const int&);
+int mult(const int&, const int&);
+int division(const int&, const int&);
+int mod(const int&, const int&);
+int negation(const int&);
+int conjunction(const int&, const int&);
+int disjunction(const int&, const int&);
+int exclusiveOr(const int&, const int&);
+int leftshift(const int&, const int&);
+int rightshift(const int&, const int&);
 
-long double division(const long double&, const long double&);
 long double sum(const long double&, const long double&);
 long double sub(const long double&, const long double&);
 long double mult(const long double&, const long double&);
+long double division(const long double&, const long double&);
 
-enum operation { Sum, Sub, Mult, Division, Mod, Exp = 100, Empty = 1000 };
+enum operation {
+    Sum,
+    Sub,
+    Mult,
+    Division,
+    Mod,
+    Conjunction,
+    Disjunction,
+    ExclusiveOr,
+    LeftShift,
+    RightShift,
+    Exp = 100,
+    UnPlus,
+    UnMinus,
+    Negation,
+    Empty = 1000
+};
 
 bool isUnary(operation&);
-void askForNumber(long long&);
-void askForNumber(long long&, long long&);
+void askForNumber(int&);
+void askForNumber(int&, int&);
 void askForNumber(long double&);
 void askForNumber(long double&, long double&);
 
-void applyUnaryOperation(const operation&, const long long&, long long&);
+void applyUnaryOperation(const operation&, const int&, int&);
 void applyUnaryOperation(const operation&, const long double&, long double&);
-void applyBinaryOperation(const operation&, const long long&, const long long&, long long&);
+void applyBinaryOperation(const operation&, const int&, const int&, int&);
 void applyBinaryOperation(const operation&, const long double&, const long double&, long double&);
 
-
-operation askForOperation();
+operation askForOperation(std::string);
 
 int main() {
     while (true) {
         std::string varType;
-        std::cout << "which type?" << std::endl;
+        std::cout << "Which type?" << std::endl;
 
         std::cin >> varType;
 
         if (varType == "int") {
             operation op;
-            op = askForOperation();
+            op = askForOperation(varType);
             if (isUnary(op)) {
-                long long x;
+                int x;
                 askForNumber(x);
-                long long result;
+                int result;
                 applyUnaryOperation(op, x, result);
                 std::cout << result << std::endl;
             } else {
-                long long x, y;
+                int x, y;
                 askForNumber(x, y);
-                long long result;
+                int result;
                 applyBinaryOperation(op, x, y, result);
 
                 std::cout << result << std::endl;
             }
 
-        } else {
+        } else if (varType == "double") {
             operation op;
-            op = askForOperation();
+            op = askForOperation(varType);
             if (isUnary(op)) {
                 long double x;
                 askForNumber(x);
@@ -69,11 +90,13 @@ int main() {
 
                 std::cout << result << std::endl;
             }
+        } else {
+            std::cout << "Wrong type!" << std::endl;
         }
     }
 }
 
-long long sum(const long long& a, const long long& b) {
+int sum(const int& a, const int& b) {
     return a + b;
 }
 
@@ -81,7 +104,7 @@ long double sum(const long double& a, const long double& b) {
     return a + b;
 }
 
-long long sub(const long long& a, const long long& b) {
+int sub(const int& a, const int& b) {
     return a - b;
 }
 
@@ -89,7 +112,7 @@ long double sub(const long double& a, const long double& b) {
     return a - b;
 }
 
-long long mult(const long long& a, const long long& b) {
+int mult(const int& a, const int& b) {
     return a * b;
 }
 
@@ -97,7 +120,7 @@ long double mult(const long double& a, const long double& b) {
     return a * b;
 }
 
-long long division(const long long& a, const long long& b) {
+int division(const int& a, const int& b) {
     return a / b;
 }
 
@@ -105,17 +128,51 @@ long double division(const long double& a, const long double& b) {
     return a / b;
 }
 
-long long mod(const long long& a, const long long& b) {
+int mod(const int& a, const int& b) {
     return a % b;
 }
 
-operation askForOperation() {
-    std::string menu = "Sum - 0\nSub - 1\nMult - 2\nDivision - 3\nMod - 4\n";
+int negation(const int& a) {
+    if (a == 0) {
+        return 1;
+    } else {
+        return 0;
+    }
+}
+
+int conjunction(const int& a, const int& b) {
+    return (a & b);
+}
+
+int disjunction(const int& a, const int& b) {
+    return (a | b);
+}
+
+int exclusiveOr(const int& a, const int& b) {
+    return (a ^ b);
+}
+
+int leftShift(const int& a, const int& k) {
+    return (a << k);
+}
+
+int rightShift(const int& a, const int& k) {
+    return (a >> k);
+}
+
+operation askForOperation(std::string type) {
+    std::string menu;
+    if (type == "int") {
+        menu = "Sum - 0\nSub - 1\nMult - 2\nDivision - 3\nMod - 4\nConjunction - 5\n";
+        menu += "Disjunction - 6\nExclusiveOr - 7\nLeftShift - 8\nRightShift - 9\n";
+        menu += "Plus one - 101\nMinus one - 102\nNegation - 103\n";
+    } else if (type == "double") {
+        menu = "Sum - 0\nSub - 1\nMult - 2\nDivision - 3";
+    }
     std::cout << menu;
     std::cout << "operation? ";
     int num;
     std::cin >> num;
-    // return operation(num);
     return static_cast<operation>(num);
 }
 
@@ -123,12 +180,12 @@ bool isUnary(operation& a) {
     return a >= 100;
 }
 
-void askForNumber(long long& a) {
+void askForNumber(int& a) {
     std::cout << "input 1 integer: ";
     std::cin >> a;
 }
 
-void askForNumber(long long& a, long long& b) {
+void askForNumber(int& a, int& b) {
     std::cout << "input 2 integer: ";
     std::cin >> a >> b;
 }
@@ -143,13 +200,25 @@ void askForNumber(long double& a, long double& b) {
     std::cin >> a >> b;
 }
 
-void applyUnaryOperation(const operation& op, const long long& a, long long& b) {
+void applyUnaryOperation(const operation& op, const int& a, int& b) {
     switch (op) {
+        case UnPlus: {
+            b = a + 1;
+            break;
+        }
+        case UnMinus: {
+            b = a - 1;
+            break;
+        }
+        case (Negation): {
+            b = negation(a);
+            break;
+        }
         case Empty: {
             break;
         }
         default: {
-            std::cout << "Wrong!!!" << std::endl;
+            std::cout << "Wrong! Operation is not from the list" << std::endl;
             break;
         }
     }
@@ -162,7 +231,7 @@ void applyUnaryOperation(const operation& op, const long double& a, long double&
             break;
         }
         default: {
-            std::cout << "Wrong!!!" << std::endl;
+            std::cout << "Wrong! Operation is not from the list" << std::endl;
             break;
         }
     }
@@ -170,7 +239,7 @@ void applyUnaryOperation(const operation& op, const long double& a, long double&
 }
 
 void applyBinaryOperation(
-    const operation& op, const long long& a, const long long& b, long long& c
+    const operation& op, const int& a, const int& b, int& c
 ) {
     switch (op) {
         case (Sum): {
@@ -193,8 +262,28 @@ void applyBinaryOperation(
             c = mod(a, b);
             break;
         }
+        case (Conjunction): {
+            c = conjunction(a, b);
+            break;
+        }
+        case (Disjunction): {
+            c = disjunction(a, b);
+            break;
+        }
+        case (ExclusiveOr): {
+            c = exclusiveOr(a, b);
+            break;
+        }
+        case (LeftShift): {
+            c = leftShift(a, b);
+            break;
+        }
+        case (RightShift): {
+            c = rightShift(a, b);
+            break;
+        }
         default: {
-            std::cout << "Wrong!!!" << std::endl;
+            std::cout << "Wrong! Operation is not from the list" << std::endl;
             break;
         }
     }
@@ -222,7 +311,7 @@ void applyBinaryOperation(
             break;
         }
         default: {
-            std::cout << "Wrong!!!" << std::endl;
+            std::cout << "Wrong! Operation is not from the list" << std::endl;
             break;
         }
     }

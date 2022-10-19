@@ -5,19 +5,23 @@ int sub(const int&, const int&);
 int mult(const int&, const int&);
 int division(const int&, const int&);
 int mod(const int&, const int&);
-int negation(const int&);
 int conjunction(const int&, const int&);
 int disjunction(const int&, const int&);
 int exclusiveOr(const int&, const int&);
 int leftshift(const int&, const int&);
 int rightshift(const int&, const int&);
+int unarySum(const int&);
+int unarySub(const int&);
+int negation(const int&);
 
 long double sum(const long double&, const long double&);
 long double sub(const long double&, const long double&);
 long double mult(const long double&, const long double&);
 long double division(const long double&, const long double&);
 
+
 enum operation {
+    Error = -1,
     Sum,
     Sub,
     Mult,
@@ -29,8 +33,8 @@ enum operation {
     LeftShift,
     RightShift,
     Exp = 100,
-    UnPlus,
-    UnMinus,
+    UnarySum,
+    UnarySub,
     Negation,
     Empty = 1000
 };
@@ -51,9 +55,13 @@ operation askForOperation(std::string);
 int main() {
     while (true) {
         std::string varType;
-        std::cout << "Which type?" << std::endl;
+        std::cout << "Print type or 'stop' to end: ";
 
         std::cin >> varType;
+
+		if (varType == "stop") {
+			break;
+		}
 
         if (varType == "int") {
             operation op;
@@ -160,6 +168,14 @@ int rightShift(const int& a, const int& k) {
     return (a >> k);
 }
 
+int unarySum( const int &a) {
+    return (a + 1);
+};
+
+int unarySub(const int& a) {
+    return (a - 1);
+};
+
 operation askForOperation(std::string type) {
     std::string menu;
     if (type == "int") {
@@ -169,8 +185,9 @@ operation askForOperation(std::string type) {
     } else if (type == "double") {
         menu = "Sum - 0\nSub - 1\nMult - 2\nDivision - 3";
     }
-    std::cout << menu;
-    std::cout << "operation? ";
+
+    std::cout << menu << std::endl;
+    std::cout << "Print operation: ";
     int num;
     std::cin >> num;
     return static_cast<operation>(num);
@@ -202,12 +219,12 @@ void askForNumber(long double& a, long double& b) {
 
 void applyUnaryOperation(const operation& op, const int& a, int& b) {
     switch (op) {
-        case UnPlus: {
-            b = a + 1;
+        case UnarySum: {
+            b = unarySum(a);
             break;
         }
-        case UnMinus: {
-            b = a - 1;
+        case UnarySub: {
+            b = unarySub(a);
             break;
         }
         case (Negation): {

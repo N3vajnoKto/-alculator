@@ -1,24 +1,5 @@
 #include <iostream>
 
-int sum(const int&, const int&);
-int sub(const int&, const int&);
-int mult(const int&, const int&);
-int division(const int&, const int&);
-int mod(const int&, const int&);
-int conjunction(const int&, const int&);
-int disjunction(const int&, const int&);
-int exclusiveOr(const int&, const int&);
-int leftshift(const int&, const int&);
-int rightshift(const int&, const int&);
-int unarySum(const int&);
-int unarySub(const int&);
-int negation(const int&);
-
-long double sum(const long double&, const long double&);
-long double sub(const long double&, const long double&);
-long double mult(const long double&, const long double&);
-long double division(const long double&, const long double&);
-
 
 enum operation {
     Error = -1,

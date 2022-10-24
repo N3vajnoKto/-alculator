@@ -22,6 +22,7 @@
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="input.h" />
     <ClInclude Include="Source.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

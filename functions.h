@@ -1,69 +1,39 @@
 #pragma once
-#include <iostream>
 #include <string>
 
-enum operation {
-    Error = -1,
-    Sum,
-    Sub,
-    Mult,
-    Division,
-    Mod,
-    Conjunction,
-    Disjunction,
-    ExclusiveOr,
-    LeftShift,
-    RightShift,
-    Exp = 100,
-    UnarySum,
-    UnarySub,
-    Negation,
-    Empty = 1000
+class Operation {
+public:
+    bool bin_;
+    bool leftAssociative_;
+    bool pref_;
+    int prior_;
+    virtual double operator()(const double& first, const double& second = 0) = 0;
+    Operation(bool bin, bool la, bool pr, int prior);
 };
 
-int sum(int a, int b);
+double solution(std::string expression);
+bool isNumber(const std::string&);
 
-double sum(double a, double b);
+class Sum : public Operation{
+public:
+    Sum(bool bin, bool la, bool pr, int prior);
+    double operator()(const double& first, const double& second);
+};
 
-int sub(const int a, const int b);
+class Sub : public Operation {
+public:
+    Sub(bool bin, bool la, bool pr, int prior);
+    double operator()(const double& first, const double& second);
+};
 
-double sub(const double a, const double b);
+class Mult : public Operation {
+public:
+    Mult(bool bin, bool la, bool pr, int prior);
+    double operator()(const double& first, const double& second);
+};
 
-int mult(const int a, const int b);
-
-double mult(const double a, const double b);
-
-int division(const int a, const int b);
-
-double division(const double a, const double b);
-
-int mod(const int a, const int b);
-
-int negation(const int a);
-
-int conjunction(const int a, const int b);
-
-int disjunction(const int a, const int b);
-
-int exclusiveOr(const int a, const int b);
-
-int leftShift(const int a, const int k);
-
-int rightShift(const int a, const int k);
-
-int unarySum(const int a);
-
-int unarySub(const int a);
-
-bool isUnary(operation&);
-void askForNumber(int&);
-void askForNumber(int&, int&);
-void askForNumber(double&);
-void askForNumber(double&, double&);
-
-void applyUnaryOperation(const operation&, const int, int&);
-void applyUnaryOperation(const operation&, const double, double&);
-void applyBinaryOperation(const operation&, const int, const int, int&);
-void applyBinaryOperation(const operation&, const double, const double, double&);
-
-operation askForOperation(std::string);
+class Divide : public Operation {
+public:
+    Divide(bool bin, bool la, bool pr, int prior);
+    double operator()(const double& first, const double& second);
+};

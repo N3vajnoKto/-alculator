@@ -2,11 +2,22 @@
 #include <gtest/gtest.h>
 #include "functions.h"
 
-TEST(sum, test) {
-	EXPECT_EQ(sum(-1, 2), 1);
-	EXPECT_NEAR(sum(-1.5, 2.0), 0.5, 0.00001);
-}
+ TEST(expression, format) {
+	EXPECT_ANY_THROW(solution("()")); 
+    EXPECT_ANY_THROW(solution("(1"));
+    EXPECT_ANY_THROW(solution("("));
+    EXPECT_ANY_THROW(solution(""));
+    EXPECT_ANY_THROW(solution(")"));
+    EXPECT_ANY_THROW(solution("(1 + 3"));
+    EXPECT_ANY_THROW(solution("(1 + )3 + 4"));
+    EXPECT_ANY_THROW(solution("(1 + ((3 + 4)"));
+	EXPECT_NEAR(solution("(1)"), 1.0, 0.00001);
+	EXPECT_NEAR(solution("1 + 2 3"), 7.0, 0.00001);
+	EXPECT_NEAR(solution("(1 + 2)(3 + 4) (4+1)"), 105.0, 0.00001);
+	EXPECT_NEAR(solution("(1 + 2)7 (4+1)"), 105.0, 0.00001);
+	EXPECT_NEAR(solution("(1 + 2)(3 + 4)5"), 105.0, 0.00001);
+	EXPECT_NEAR(solution("7 (1   + 2)  / 7   * 5"), 15.0, 0.00001);
+	EXPECT_NEAR(solution("4"), 4.0, 0.00001);
+	EXPECT_NEAR(solution("2 + 2 * 2"), 6.0, 0.00001);
 
-TEST(sub, test) {
-	EXPECT_EQ(sum(-1, 2), 1);
 }

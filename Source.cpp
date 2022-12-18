@@ -19,6 +19,8 @@ int main() {
                 std::cout << solution(expression) << '\n';
             } catch (std::invalid_argument except) {
                 std::cout << except.what() << '\n';
+            } catch (std::runtime_error except) {
+                std::cout << except.what() << '\n';
             }
         }
     }

@@ -1,1 +1,31 @@
-is empty now
+Enter an expression and press ENTER to get the answer.
+If the calculator cannot calculate the expression, it will notify you.
+sign '=' does not need to be written in the expression.
+Calculator can perform the following operations:
+a + b                    sum of numbers
+a - b                    difference of numbers
+a * b                    multiplication of numbers
+ab                       multiplication of numbers
+a / b                    division of numbers
+a % b                    remainder of the division of integer parts of numbers
+a ** b                   a to degree b
+sqrt(a, b)               root extraction of the degree b
+a!                       factorial integer part of a
+sin(a)
+cos(a)
+tg(a)
+ctg(a)
+sec(a)
+csc(a)
+arcsin(a)
+arccos(a)
+arctg(a)
+arcctg(a)
+log(a, b)                 base a logarithm
+ln(a)                     natural logarithm
+a & b                     bitwise and
+a | b                     bitwise or
+a ^ b                     bitwise xor
+~a                        bitwise not
+a << b                    bitwise left shift
+a >> b                    bitwise right shift

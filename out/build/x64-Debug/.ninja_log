@@ -8,3 +8,9 @@
 3701	3826	6941234437315974	lib/gmock.lib	c55ef27890015ec5
 3811	3861	6941234437815932	lib/gtest_main.lib	326a93fa1581cf6d
 3861	4307	6941234442084560	calculator.exe	ea0dedd19eb65905
+12	2321	6941236015061609	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.obj	c05c11804be82314
+1	2347	6941236015201498	CMakeFiles/testCalculator.dir/testCalculator.cpp.obj	3d6ff56ea99da2e6
+9	2985	6941236021746956	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock-all.cc.obj	c96e3926e6e7c626
+2347	3257	6941236024237042	testCalculator.exe	3559ac085fd7003d
+6	3941	6941236031266986	_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/__/googletest/src/gtest-all.cc.obj	c510f7d995a3ea9e
+3941	4032	6941236032086954	lib/gmock_main.lib	e07026b6d3f2942f

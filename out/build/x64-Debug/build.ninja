@@ -49,14 +49,6 @@ cmake_ninja_workdir = E$:\Labs\rep\calculator-team-8\out\build\x64-Debug\
 
 build cmake_object_order_depends_target_calculator: phony || cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build CMakeFiles\calculator.dir\functions.cpp.obj: CXX_COMPILER__calculator_Debug E$:\Labs\rep\calculator-team-8\functions.cpp || cmake_object_order_depends_target_calculator
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /W4 /WX /fsanitize=address /Zi /Ob0 /Od /RTC1 -MDd -std:c++17
-  INCLUDES = -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googletest\include -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googletest -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googlemock\include -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googlemock -external:W0
-  OBJECT_DIR = CMakeFiles\calculator.dir
-  OBJECT_FILE_DIR = CMakeFiles\calculator.dir
-  TARGET_COMPILE_PDB = CMakeFiles\calculator.dir\
-  TARGET_PDB = calculator.pdb
-
 build CMakeFiles\calculator.dir\Source.cpp.obj: CXX_COMPILER__calculator_Debug E$:\Labs\rep\calculator-team-8\Source.cpp || cmake_object_order_depends_target_calculator
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /W4 /WX /fsanitize=address /Zi /Ob0 /Od /RTC1 -MDd -std:c++17
   INCLUDES = -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googletest\include -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googletest -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googlemock\include -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googlemock -external:W0
@@ -73,7 +65,7 @@ build CMakeFiles\calculator.dir\Source.cpp.obj: CXX_COMPILER__calculator_Debug E
 #############################################
 # Link the executable calculator.exe
 
-build calculator.exe: CXX_EXECUTABLE_LINKER__calculator_Debug CMakeFiles\calculator.dir\functions.cpp.obj CMakeFiles\calculator.dir\Source.cpp.obj | lib\gtest_main.lib lib\gmock.lib lib\gtest.lib || lib\gmock.lib lib\gtest.lib lib\gtest_main.lib
+build calculator.exe: CXX_EXECUTABLE_LINKER__calculator_Debug CMakeFiles\calculator.dir\Source.cpp.obj | lib\gtest_main.lib lib\gmock.lib lib\gtest.lib || lib\gmock.lib lib\gtest.lib lib\gtest_main.lib
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /W4 /WX /fsanitize=address /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = lib\gtest_main.lib  lib\gmock.lib  lib\gtest.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib
@@ -94,14 +86,6 @@ build calculator.exe: CXX_EXECUTABLE_LINKER__calculator_Debug CMakeFiles\calcula
 
 build cmake_object_order_depends_target_testCalculator: phony || cmake_object_order_depends_target_gmock cmake_object_order_depends_target_gtest cmake_object_order_depends_target_gtest_main
 
-build CMakeFiles\testCalculator.dir\functions.cpp.obj: CXX_COMPILER__testCalculator_Debug E$:\Labs\rep\calculator-team-8\functions.cpp || cmake_object_order_depends_target_testCalculator
-  FLAGS = /DWIN32 /D_WINDOWS /EHsc /W4 /WX /fsanitize=address /Zi /Ob0 /Od /RTC1 -MDd -std:c++17
-  INCLUDES = -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googletest\include -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googletest -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googlemock\include -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googlemock -external:W0
-  OBJECT_DIR = CMakeFiles\testCalculator.dir
-  OBJECT_FILE_DIR = CMakeFiles\testCalculator.dir
-  TARGET_COMPILE_PDB = CMakeFiles\testCalculator.dir\
-  TARGET_PDB = testCalculator.pdb
-
 build CMakeFiles\testCalculator.dir\testCalculator.cpp.obj: CXX_COMPILER__testCalculator_Debug E$:\Labs\rep\calculator-team-8\testCalculator.cpp || cmake_object_order_depends_target_testCalculator
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /W4 /WX /fsanitize=address /Zi /Ob0 /Od /RTC1 -MDd -std:c++17
   INCLUDES = -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googletest\include -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googletest -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googlemock\include -external:IE:\Labs\rep\calculator-team-8\out\build\x64-Debug\_deps\googletest-src\googlemock -external:W0
@@ -118,7 +102,7 @@ build CMakeFiles\testCalculator.dir\testCalculator.cpp.obj: CXX_COMPILER__testCa
 #############################################
 # Link the executable testCalculator.exe
 
-build testCalculator.exe: CXX_EXECUTABLE_LINKER__testCalculator_Debug CMakeFiles\testCalculator.dir\functions.cpp.obj CMakeFiles\testCalculator.dir\testCalculator.cpp.obj | lib\gtest_main.lib lib\gmock.lib lib\gtest.lib || lib\gmock.lib lib\gtest.lib lib\gtest_main.lib
+build testCalculator.exe: CXX_EXECUTABLE_LINKER__testCalculator_Debug CMakeFiles\testCalculator.dir\testCalculator.cpp.obj | lib\gtest_main.lib lib\gmock.lib lib\gtest.lib || lib\gmock.lib lib\gtest.lib lib\gtest_main.lib
   FLAGS = /DWIN32 /D_WINDOWS /EHsc /W4 /WX /fsanitize=address /Zi /Ob0 /Od /RTC1 -MDd
   LINK_FLAGS = /machine:x64 /debug /INCREMENTAL /subsystem:console
   LINK_LIBRARIES = lib\gtest_main.lib  lib\gmock.lib  lib\gtest.lib  kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib

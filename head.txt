@@ -1,3 +1,5 @@
 Print Q to close the programm.
 Print HELP to open guide.
+Print INT to open integer calculator.
+Print DOUBLE to open real calculator.
 Print the expression below and press ENTER to get the answer.

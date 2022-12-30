@@ -1,4 +1,4 @@
-The system is: Windows - 10.0.19044 - AMD64
+The system is: Windows - 10.0.19045 - AMD64
 Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
 Compiler: C:/Program Files/Microsoft Visual Studio/2022/Community/VC/Tools/MSVC/14.33.31629/bin/Hostx64/x64/cl.exe 
 Build flags: 
@@ -26,8 +26,8 @@ The CXX compiler identification is MSVC, found in "E:/Labs/rep/calculator-team-8
 Detecting CXX compiler ABI info compiled with the following output:
 Change Dir: E:/Labs/rep/calculator-team-8/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_e2b47 && [1/2] Building CXX object CMakeFiles\cmTC_e2b47.dir\CMakeCXXCompilerABI.cpp.obj
-[2/2] Linking CXX executable cmTC_e2b47.exe
+Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_562fa && [1/2] Building CXX object CMakeFiles\cmTC_562fa.dir\CMakeCXXCompilerABI.cpp.obj
+[2/2] Linking CXX executable cmTC_562fa.exe
 
 
 
@@ -58,8 +58,8 @@ The C compiler identification is MSVC, found in "E:/Labs/rep/calculator-team-8/o
 Detecting C compiler ABI info compiled with the following output:
 Change Dir: E:/Labs/rep/calculator-team-8/out/build/x64-Debug/CMakeFiles/CMakeTmp
 
-Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_c5429 && [1/2] Building C object CMakeFiles\cmTC_c5429.dir\CMakeCCompilerABI.c.obj
-[2/2] Linking C executable cmTC_c5429.exe
+Run Build Command(s):C:/Program Files/Microsoft Visual Studio/2022/Community/Common7/IDE/CommonExtensions/Microsoft/CMake/Ninja/ninja.exe cmTC_7de28 && [1/2] Building C object CMakeFiles\cmTC_7de28.dir\CMakeCCompilerABI.c.obj
+[2/2] Linking C executable cmTC_7de28.exe
 
 
 
